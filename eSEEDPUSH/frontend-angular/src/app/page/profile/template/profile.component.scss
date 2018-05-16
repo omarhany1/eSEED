@@ -1,0 +1,281 @@
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    
+}
+.paddingBtn{
+  padding: 1%;
+}
+
+// includes colors mixin
+
+$star-size: 20px;
+$star-size-small: 14px;
+$star-color: #f8c264;
+$badge-color: $star-color;
+$badge-text-color: #787878;
+
+.c-rating {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  text-decoration: none;
+
+  &--small {
+    .c-rating__badge,
+    .c-rating__count {
+      font-size: 0.8em;
+    }
+
+    .c-rating__display {
+      width: $star-size-small * 5;
+    }
+
+    .c-rating__stars {
+      background-size: $star-size-small;
+      height: $star-size-small;
+
+      &--background {
+        width: $star-size-small * 5;
+      }
+    }
+  }
+
+  &__badge,
+  &__display,
+  &__count {
+    flex: 0 0 auto;
+    margin: 0 0.2em;
+    text-decoration: none; // this is here to keep underlines out no matter how anchor tags are applied
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__badge {
+    background: $badge-color;
+    border-radius: 0.2em;
+    color: $badge-text-color;
+    min-width: 2em;
+    padding: 0.2em 0.3em;
+    text-align: center;
+  }
+
+  &__display {
+    position: relative;
+    width: $star-size * 5;
+  }
+
+  &__stars {
+    background: url('data:image/svg+xml,%3Csvg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="2.7 2.7 26.6 26.6"%3E%3Cpath fill="#{$star-color}" d="M7.75 28l 8.251-25.314 8.251 25.314-21.564-15.688 26.626 0z"%3E%3C/path%3E%3C/svg%3E') repeat-x left / $star-size;
+    display: block;
+    height: $star-size;
+    left: 0;
+    margin-top: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+
+    &--background {
+      background-image: url('data:image/svg+xml,%3Csvg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="2.7 2.7 26.6 26.6"%3E%3Cpath d="M7.75 28l 8.251-25.314 8.251 25.314-21.564-15.688 26.626 0z"%3E%3C/path%3E%3C/svg%3E');
+      opacity: 0.25;
+      position: relative;
+      width: $star-size * 5;
+    }
+  }
+}
+
+.choose_file{
+  position:relative;
+  display:inline-block;    
+border-radius:8px;
+  border:#ebebeb solid 1px;
+  width:100px; 
+  padding: 4px 6px 4px 8px;
+  font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
+  color: #7f7f7f;
+  margin-top: 2px;
+background:white
+}
+.choose_file input[type="file"]{
+  -webkit-appearance:none; 
+  position:absolute;
+  top:0; left:0;
+  opacity:0; 
+}
+
+.image {
+opacity: 1;
+display: block;
+width: 100%;
+height: auto;
+transition: .5s ease;
+backface-visibility: hidden;
+}
+
+.middle {
+transition: .5s ease;
+opacity: 0;
+position: absolute;
+top: 80%;
+left: 95%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+text-align: center;
+}
+
+.image:hover  {
+
+}
+
+.image:hover .middle {
+opacity: 1;
+}
+
+#t {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.checked {
+  color: orange;
+}
+
+
+.divider{
+  width:5px;
+  height:auto;
+  display:inline-block;
+}
+
+
+
+
+
+#mydivheader {
+
+    cursor: move;
+   
+}
+
+.positionCenter{
+    position: absolute;
+    margin:auto;
+    right:0;
+    left:0;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+body {
+  text-align: center;
+  padding: 10% 50px;
+  background-color: #2c3e50;
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  color: #fff;
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 50px;
+}
+
+.toggle-btn {
+  width: 80px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 50px;
+  display: inline-block;
+  position: relative;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAyklEQVQ4T42TaxHCQAyENw5wAhLACVUAUkABOCkSwEkdhNmbpHNckzv689L98toIAKjqGcAFwElEFr5ln6ruAMwA7iLyFBM/TPDuQSrxwf6fCKBoX2UMIYGYkg8BLOnVg2RiAEexGaQQq4w9e9klcxGLLAUwgDAcihlYAR1IvZA1sz/+AAaQjXhTQQVoe2Yo3E7UQiT2ijeQdojRtClOfVKvMVyVpU594kZK9zzySWTlcNqZY9tjCsUds00+A57z1e35xzlzJjee8xf0HYp+cOZQUQAAAABJRU5ErkJggg==") no-repeat 50px center #e74c3c;
+  cursor: pointer;
+  -webkit-transition: background-color .40s ease-in-out;
+  -moz-transition: background-color .40s ease-in-out;
+  -o-transition: background-color .40s ease-in-out;
+  transition: background-color .40s ease-in-out;
+  cursor: pointer;
+}
+.toggle-btn.active {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAmUlEQVQ4T6WT0RWDMAhFeZs4ipu0mawZpaO4yevBc6hUIWLNd+4NeQDk5sE/PMkZwFvZywKSTxF5iUgH0C4JHGyF97IggFVSqyCFga0CvQSg70Mdwd8QSSr4sGBMcgavAgdvwQCtApvA2uKr1x7Pu++06ItrF5LXPB/CP4M0kKTwYRIDyRAOR9lJTuF0F0hOAJbKopVHOZN9ACS0UgowIx8ZAAAAAElFTkSuQmCC") no-repeat 10px center #2ecc71;
+}
+.toggle-btn.active .round-btn {
+  left: 45px;
+}
+.toggle-btn .round-btn {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  margin-top: -15px;
+  -webkit-transition: all .30s ease-in-out;
+  -moz-transition: all .30s ease-in-out;
+  -o-transition: all .30s ease-in-out;
+  transition: all .30s ease-in-out;
+}
+.toggle-btn .cb-value {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 9;
+  cursor: pointer;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+
+.made-with-love {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 10px;
+  text-align: center;
+  font-size: 10px;
+  z-index: 9999;
+  font-family: arial;
+  color: #fff;
+}
+.made-with-love i {
+  font-style: normal;
+  color: #F50057;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: #fff;
+  text-decoration: none;
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+
+.descreptuser{
+   max-width: 10px;
+}
+
+.flex-center {
+
+  word-wrap: break-word;
+}
+/*  */
